@@ -35,6 +35,7 @@ app.use(
     schema: schema, //instancia del GraphQLSchema de GraphQL. Aquí es donde estructuramos la información que vamos a solicitar
     rootValue: root, //lista con todos nuestros schemas que van a estar disponibles para ser consultados
     graphiql: process.env.NODE_ENV === "development",
+    
   })
 );
 app.use(express.static(path.join(__dirname, "public/inicio")));
