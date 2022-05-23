@@ -30,19 +30,15 @@ type Orden {
    responsable_trabajo: [Responsables]
 }
 
-
 type Responsables{
    nombre : String
    cedula: Int
 }
 
-
 input Responsable{
    nombre : String
    cedula: Int
 }
-
-
 
 
 input OrdenInput {
@@ -72,7 +68,18 @@ input OrdenInput {
    pernoctada: String
    reponsable_orden: [Responsable]
    responsable_trabajo:[Responsable]
-}`;
+}
+
+   input UpdateOrden{
+      estado:Boolean
+      fecha_terminacion: String
+      cierre: String
+      fecha_cierre: String
+      vales_alimentacion: String
+      pernoctada: String
+   
+    }
+`;
 
 module.exports.QUERY_ORDEN = `
 listarOrden : [Orden]
@@ -80,4 +87,5 @@ orden_ID(_id: ID!): Orden
 `;
 module.exports.MUTATIONS_ORDEN = `
 crearOrden(input: OrdenInput): Orden
+actualizarOrden(_id: ID!, input: UpdateOrden):Orden
 `;

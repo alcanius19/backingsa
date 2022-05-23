@@ -11,11 +11,10 @@ const mapearInput = async (input) => {
 module.exports.resolversOrden = {
   listarOrden: async () => {
     let datos = await Orden.find();
-   return datos;
+    return datos;
   },
 
   orden_ID: async (args) => {
-   
     try {
       const _id = args._id;
       console.log(_id);
@@ -34,4 +33,10 @@ module.exports.resolversOrden = {
     );
     return await _orden.save();
   },
+
+  actualizarOrden: async ({_id, input})=>{
+    const _orden = {...input};
+    const datos = await Orden.findByIdAndUpdate({_id},_orden)
+    return datos;
+  }
 };
