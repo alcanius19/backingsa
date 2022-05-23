@@ -21,9 +21,8 @@ app.set("port", process.env.PORT || 4000);
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(express.json());
-app.use(express.json({ extended: false }));
 app.use(cors({ origin: "*" }));
-app.use("/api/employees", employee);
+// app.use("/api/employees", employee);
 
 //
 
