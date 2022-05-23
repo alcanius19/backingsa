@@ -15,13 +15,14 @@ const { graphqlHTTP } = require("express-graphql");
 // configuraciones
 app.set("port", process.env.PORT || 4000);
 // cors
-app.use(cors({ origin: true, credentials: true }));
+// app.use(cors({ origin: true, credentials: true }));
 
 // Init Middleware
 app.use(bodyparser.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.json({ extended: false }));
+app.use(cors({ origin: "*" }));
 app.use("/api/employees", employee);
 
 //
@@ -32,7 +33,7 @@ const schema = require("./graphql/schemas");
 app.use(
   "/graphql",
   graphqlHTTP({
-   schema: schema, //instancia del GraphQLSchema de GraphQL. Aquí es donde estructuramos la información que vamos a solicitar
+    schema: schema, //instancia del GraphQLSchema de GraphQL. Aquí es donde estructuramos la información que vamos a solicitar
     rootValue: root, //lista con todos nuestros schemas que van a estar disponibles para ser consultados
     graphiql: process.env.NODE_ENV === "development",
   })
