@@ -11,6 +11,7 @@ const mapearInput = async (input) => {
 module.exports.resolversOrden = {
   listarOrden: async () => {
     let datos = await Orden.find();
+    console.log(datos);
     return datos;
   },
 
@@ -34,9 +35,9 @@ module.exports.resolversOrden = {
     return await _orden.save();
   },
 
-  actualizarOrden: async ({_id, input})=>{
-    const _orden = {...input};
-    const datos = await Orden.findByIdAndUpdate({_id},_orden)
+  actualizarOrden: async ({ _id, input }) => {
+    const _orden = { ...input };
+    const datos = await Orden.findByIdAndUpdate({ _id }, _orden);
     return datos;
-  }
+  },
 };

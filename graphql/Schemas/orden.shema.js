@@ -17,9 +17,7 @@ type Orden {
    detalle_trabajos: String
    tipo_vehiculo: String
    placa_vehiculo: String
-   codigo1: Int
-   nombre1: String
-   cedula1: Int
+   recursos: String
    requerimientos: String
    trabajo: String
    cierre: String
@@ -57,9 +55,7 @@ input OrdenInput {
    detalle_trabajos: String
    tipo_vehiculo: String
    placa_vehiculo: String
-   codigo1: Int
-   nombre1: String
-   cedula1: Int
+   recursos: String
    requerimientos: String
    trabajo:String
    cierre: String
@@ -74,6 +70,7 @@ input OrdenInput {
       estado:Boolean
       fecha_terminacion: String
       cierre: String
+      detalle_trabajos: String
       fecha_cierre: String
       vales_alimentacion: String
       pernoctada: String
