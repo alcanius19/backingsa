@@ -6,7 +6,7 @@ const morgan = require("morgan");
 const bodyparser = require("body-parser");
 const employee = require("./routes/api/employees");
 var cors = require("cors");
-const { buildSchema } = require("graphql");
+// const { buildSchema } = require("graphql");
 require("dotenv").config();
 
 db();
