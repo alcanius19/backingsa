@@ -36,6 +36,14 @@ module.exports.resolversPermiso = {
             console.log(error);
         }
 
+    },
+
+    ActualizarPermiso: async ({_id,input})=>{
+        const _permiso = {...input};
+        const datos = await Permisos.findByIdAndUpdate({ _id }, _permiso);
+        console.log(datos);
+        return datos;
+
     }
 
 

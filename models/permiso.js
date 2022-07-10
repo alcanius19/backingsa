@@ -34,11 +34,17 @@ const PermisoSchema = new mongoose.Schema({
     clase_diligencia:{
         type:String
     },
+    otro:{
+        type:String
+    },
     firma_solicitante:{
         type: String,
     },
     autorizado_por:{
         type:String
+    },
+    autorizado: {
+        type: Boolean
     },
     rechazado:{
         type: Boolean

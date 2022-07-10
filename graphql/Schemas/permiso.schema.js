@@ -11,8 +11,10 @@ type Permiso{
     hora_desde:String
     hora_hasta:String
     clase_diligencia:String
+    otro: String
     firma_solicitante: String
     autorizado_por:String
+    autorizado: Boolean
     rechazado: Boolean
     remunerado: Boolean
     no_remunerado:Boolean
@@ -29,8 +31,10 @@ input PermisoInput {
     hora_desde:String
     hora_hasta:String
     clase_diligencia:String
+    otro: String
     firma_solicitante: String
     autorizado_por:String
+    autorizado: Boolean
     rechazado: Boolean
     remunerado: Boolean
     no_remunerado:Boolean
